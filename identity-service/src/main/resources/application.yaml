@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+swaggerApi:
+  service:
+    api-docs: api-bookteria-authentication
+    title: API Bookteria service
+    version: 1.0.0
+    server: http://localhost:8080/identity
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+spring:
+    datasource:
+      url: "jdbc:mysql://localhost:3306/identity_service"
+      #optional for isolation unit test
+      driver-class-name: "com.mysql.cj.jdbc.Driver"
+      username: root
+      password: admin
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql : true
+
+jwt:
+    signerKey: "ksjxm05bLsLw8RA9ecJZja2s/VjvzXJxuzBVEx8e/SW+uk80Mq2sjBDd9ZLkbFnB"
+
+
